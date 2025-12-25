@@ -1,0 +1,9 @@
+export { default as About } from './About';
+export { default as Home } from './Home';
+export { default as Culture } from './Culture';
+export { default as Traditions } from './Traditions';
+export { default as Sites } from './Sites';
+export { default as PlacesToGo } from './PlacesToGo';
+export { default as ThingsToDo } from './ThingsToDo';
+export { default as History } from './History';
+export { default as NorwegianWords } from './NorwegianWords';

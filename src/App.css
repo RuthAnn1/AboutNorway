@@ -1,0 +1,21 @@
+/* App.css — app-level layout making homepage span full viewport */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure children inside .content can expand if necessary */
+.content > * { flex: 1 1 auto; }

@@ -1,0 +1,18 @@
+.norwegian-words {
+  padding: 2rem;
+}
+
+.norwegian-words h2 {
+  margin-bottom: 0.5rem;
+}
+
+.flashcard-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.flashcard-stats {
+  margin-top: 10px;
+  color: #444;
+}/*# sourceMappingURL=norwegianwords.css.map */
