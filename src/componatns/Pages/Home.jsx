@@ -21,14 +21,6 @@ export default function Home({ onNavigate }) {
                 </div>
               </button>
 
-              <button className="guide-item" onClick={() => onNavigate && onNavigate('about')}>
-                <span className="guide-icon">🌍</span>
-                <div>
-                  <h4>About Norway</h4>
-                  <p>Discover facts and background about the country.</p>
-                </div>
-              </button>
-
               <button className="guide-item" onClick={() => onNavigate && onNavigate('culture')}>
                 <span className="guide-icon">🎭</span>
                 <div>
@@ -58,6 +50,14 @@ export default function Home({ onNavigate }) {
                 <div>
                   <h4>Norwegian Words</h4>
                   <p>Learn essential words and phrases.</p>
+                </div>
+              </button>
+              
+               <button className="guide-item" onClick={() => onNavigate && onNavigate('about')}>
+                <span className="guide-icon">🌍</span>
+                <div>
+                  <h4>About Norway</h4>
+                  <p>All about the author</p>
                 </div>
               </button>
             </div>
