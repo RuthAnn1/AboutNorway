@@ -1,0 +1,24 @@
+/* App.scss — app-level layout making homepage span full viewport */
+@import '../styles/variables.scss';
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: $purple-dark;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.content > * {
+  flex: 1 1 auto;
+}

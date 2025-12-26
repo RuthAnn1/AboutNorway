@@ -1,8 +1,9 @@
-/* App.css — app-level layout making homepage span full viewport */
-
+@charset "UTF-8";
+/* App.scss — app-level layout making homepage span full viewport */
 html, body, #root {
   height: 100%;
   margin: 0;
+  background-color: rgb(121, 117, 175);
 }
 
 .app-container {
@@ -17,5 +18,6 @@ html, body, #root {
   flex-direction: column;
 }
 
-/* Ensure children inside .content can expand if necessary */
-.content > * { flex: 1 1 auto; }
+.content > * {
+  flex: 1 1 auto;
+}/*# sourceMappingURL=App.css.map */

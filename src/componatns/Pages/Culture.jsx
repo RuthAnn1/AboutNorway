@@ -1,5 +1,6 @@
 import React from 'react';
 import "../styles/culture.css";
+import "../styles/App.css"
 
 //import natureImg from "../assets/nature.jpg";
 //import cityImg from "../assets/city.jpg";
