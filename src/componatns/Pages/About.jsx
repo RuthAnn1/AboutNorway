@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/about.css';
 
+
 export default function About() {
   return (
     <section className="about-page">
@@ -18,5 +19,6 @@ export default function About() {
         </div>
       </div>
     </section>
+    
   );
 }

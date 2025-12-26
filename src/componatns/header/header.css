@@ -1,19 +1,20 @@
 #container {
   display: grid;
   grid-template-areas: "header";
-  background: linear-gradient(180deg, #002b36 0%, #01a4d5 100%);
+  background: rgb(15, 88, 123);
   padding: 2rem 0;
 }
 
 header {
   grid-area: header;
   text-align: center;
-  color: #ffffff;
+  color: rgb(246, 210, 214);
   max-width: 1000px;
   margin: 0 auto;
 }
 
 header h1 {
+  color: rgb(246, 210, 214);
   margin: 0 0 0.25rem 0;
   font-size: 1.9rem;
   letter-spacing: 0.5px;
@@ -21,7 +22,7 @@ header h1 {
 
 .tagline {
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgb(246, 210, 214);
   font-size: 0.95rem;
 }
 
@@ -49,7 +50,7 @@ header h1 {
 .menu-button .bar {
   display: block;
   height: 3px;
-  background: white;
+  background: rgb(246, 210, 214);
   border-radius: 2px;
 }
 
@@ -84,7 +85,7 @@ header h1 {
 .nav-link {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: white;
+  color: rgb(246, 210, 214);
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;

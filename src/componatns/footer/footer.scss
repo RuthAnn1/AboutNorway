@@ -1,0 +1,8 @@
+@import '../styles/variables.scss';
+.footer {
+  width: 100%;         // ensures full width
+  background: $blue-dark;
+  color: $pink-light;
+  text-align: center;
+  padding: 3rem 2rem;
+}

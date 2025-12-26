@@ -3,7 +3,7 @@ import Header from './componatns/header/header';
 import Home from './componatns/Pages/Home';
 import About from './componatns/Pages/About';
 import { Culture, Traditions, Sites, PlacesToGo, ThingsToDo, History, NorwegianWords } from './componatns/Pages';
-import './app.css'; 
+import './componatns/styles/App.css'; 
 
 function App() {
   const [page, setPage] = useState('home');

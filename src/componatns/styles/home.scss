@@ -1,11 +1,13 @@
+@import '../styles/variables.scss';
+
 .home-container {
   width: 100%;
-  background: rgb(155, 157, 198);
+  background: $purple-light;
 }
 
 /* Hero Section */
 .hero {
-  background: rgb(15, 88, 123);
+  background: $blue-dark;
   color: white;
   padding: 4rem 2rem;
   text-align: center;
@@ -50,7 +52,7 @@
 }
 
 .welcome-guide h2 {
-  color: rgb(121, 117, 175);
+  color: $purple-dark;
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.6rem;
@@ -91,7 +93,7 @@
 
 .guide-item h4 {
   margin: 0 0 0.25rem 0;
-  color: rgb(121, 117, 175);
+  color: $purple-dark;
   font-size: 1rem;
 }
 
@@ -117,7 +119,7 @@
 }
 
 .highlights h2 {
-  color: rgb(121, 117, 175);
+  color: $purple-dark;
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.6rem;
@@ -153,7 +155,7 @@
 
 .highlight-card h3 {
   margin: 0 0 0.5rem 0;
-  color: rgb(121, 117, 175);
+  color: $purple-dark;
   font-size: 1.1rem;
 }
 
@@ -166,8 +168,8 @@
 
 /* Call to Action */
 .cta-section {
-  background: rgb(15, 88, 123);
-  color: rgb(246, 210, 214);
+  background: $blue-dark;
+  color: $pink-light;
   text-align: center;
   padding: 3rem 2rem;
 }
@@ -190,48 +192,61 @@
     gap: 1.5rem;
     padding: 0 1rem;
   }
+
   .hero h1 {
     font-size: 2rem;
   }
+
   .hero-subtitle {
     font-size: 1rem;
   }
+
   .welcome-guide,
   .highlights {
     padding: 1.5rem;
   }
+
   .highlights-grid {
     grid-template-columns: 1fr;
   }
+
   .cta-section {
     padding: 2rem 1rem;
   }
+
   .cta-section h2 {
     font-size: 1.5rem;
   }
 }
+
 @media (max-width: 480px) {
   .hero {
     padding: 2rem 1rem;
   }
+
   .hero h1 {
     font-size: 1.6rem;
   }
+
   .hero-subtitle {
     font-size: 0.95rem;
   }
+
   .welcome-guide h2,
   .highlights h2 {
     font-size: 1.3rem;
   }
+
   .guide-item {
     gap: 0.75rem;
     padding: 0.75rem;
   }
+
   .guide-icon {
     font-size: 1.25rem;
   }
 }
+
 .trans-word {
   position: relative;
   padding: 8px 12px;
@@ -241,14 +256,13 @@
   cursor: help;
   font-weight: 600;
 }
-
 .trans-word::after {
   content: attr(data-trans);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: calc(100% + 8px);
-  background: rgba(12, 35, 60, 0.95);
+  background: rgba(12,35,60,0.95);
   color: white;
   padding: 6px 8px;
   border-radius: 6px;
@@ -259,26 +273,19 @@
   transition: opacity 160ms ease, transform 160ms ease;
   transform-origin: center bottom;
 }
-
-.trans-word:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
-}
+.trans-word:hover::after { opacity: 1; transform: translateX(-50%) translateY(-4px); }
 
 @media (max-width: 480px) {
-  .quick-words {
-    padding: 1rem;
-  }
-  .trans-word {
-    padding: 6px 10px;
-  }
+  .quick-words { padding: 1rem; }
+  .trans-word { padding: 6px 10px; }
 }
+
 /* CTA-specific translation style: transparent inline label (no light pill background) */
 .cta-trans {
   background: transparent;
   border: none;
   padding: 0;
-  color: rgb(246, 210, 214);
+  color: $pink-light;
   font-weight: 600;
 }
 
@@ -289,7 +296,7 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: calc(100% + 8px);
-  background: rgba(12, 35, 60, 0.95);
+  background: rgba(12,35,60,0.95);
   color: white;
   padding: 6px 8px;
   border-radius: 6px;
@@ -301,7 +308,4 @@
   transform-origin: center bottom;
 }
 
-.cta-trans:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
-}/*# sourceMappingURL=home.css.map */
+.cta-trans:hover::after { opacity: 1; transform: translateX(-50%) translateY(-4px); }
