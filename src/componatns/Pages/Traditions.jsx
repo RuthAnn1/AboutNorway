@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/traditions.css';
+import Footer from "../footer/footer.jsx";
 
 export default function Traditions() {
   return (
@@ -76,7 +77,7 @@ export default function Traditions() {
         </div>
 
       </section>
-
+        <Footer text="© 2024 About Norway. All rights reserved." />
     </main>
   );
 }

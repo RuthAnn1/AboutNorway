@@ -1,7 +1,7 @@
 import React from 'react';
 import "../styles/culture.css";
 import "../styles/App.css"
-
+import Footer from "../footer/footer.jsx";
 //import natureImg from "../assets/nature.jpg";
 //import cityImg from "../assets/city.jpg";
 //import workImg from "../assets/work.jpg";
@@ -69,7 +69,7 @@ export default function Culture() {
         </div>
 
       </section>
-
+      <Footer text="© 2024 About Norway. All rights reserved." />
     </main>
   );
 }
