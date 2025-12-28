@@ -1,2 +1,113 @@
-.history-page { padding: 2rem; }
-.history-page h2 { margin-bottom: 0.5rem; }
+@import './variables.scss';
+
+.history-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport */
+}
+
+/*.history-container {
+  flex: 1; grow to fill remaining space
+  width: 100%;
+  background: $purple-light;
+  padding-bottom: 2rem;
+}*/
+
+
+.history-hero {
+  background: $white;
+  color: black;
+  text-align: center;
+  padding: 3rem 3rem;
+}
+
+.history-hero h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+}
+
+.history-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Timeline Grid */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.timeline-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 250ms ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.timeline-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: $purple-dark;
+  font-size: 1.2rem;
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .history-hero h1 {
+    font-size: 2rem;
+  }
+
+  .history-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-hero {
+    padding: 2rem 1rem;
+  }
+
+  .history-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .history-hero p {
+    font-size: 0.95rem;
+  }
+
+  .timeline-card {
+    padding: 1rem;
+  }
+}

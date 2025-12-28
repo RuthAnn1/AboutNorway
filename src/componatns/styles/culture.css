@@ -9,7 +9,7 @@
 .culture-hero {
   text-align: center;
   padding: 0.5rem 2rem;
-  background: linear-gradient(180deg, #e6edf3, #f7f8f9);
+  background: linear-gradient(180deg, rgb(230, 237, 243), rgb(247, 248, 249));
 }
 
 .culture-hero h1 {

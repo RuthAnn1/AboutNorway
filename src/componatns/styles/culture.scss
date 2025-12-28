@@ -1,3 +1,4 @@
+@import './variables.scss';
 .culture {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #2e2e2e;
@@ -9,7 +10,7 @@
 .culture-hero {
   text-align: center;
   padding: 0.5rem 2rem;
-  background: linear-gradient(180deg, #e6edf3, #f7f8f9); 
+  background: linear-gradient(180deg, $off-white, $white); 
 }
 
 .culture-hero h1 {

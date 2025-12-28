@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/sites.css';
-import "../styles/App.css"
+//import "../styles/App.css"
 import Footer from "../footer/footer.jsx";
 
 const sites = [

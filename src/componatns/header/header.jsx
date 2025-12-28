@@ -1,38 +1,41 @@
 import React, { useState } from 'react';
-import './header.css'; 
+import './header.css';
 
-function Header({ onNavigate, currentPage }) {
-  const [open, setOpen] = useState(false);
+function Header({ onNavigate }) {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function navigate(page) {
-    setOpen(false);
+    setMenuOpen(false);
     if (onNavigate) onNavigate(page);
   }
 
   return (
-    <div id="container">
-      <header>
-        <div className="header-row">
-          <div className="header-title">
-            <div className="header-text">
-              <h1><span className="trans-word cta-trans" data-trans="Welcome">Velkommen</span> to Norway</h1>
-              <p className="tagline">Explore the Land of Fjords, Northern Lights & Viking Heritage</p>
-            </div>
-          </div>
+    <header>
+      <div className="header-title">
+        <h1>
+          <span className="trans-word cta-trans" data-trans="Welcome">
+            Velkommen
+          </span>{' '}
+          to Norway
+        </h1>
+        <h4 className="tagline">
+          Explore the Land of Fjords, Northern Lights & Viking Heritage
+        </h4>
 
-          <button
-            className={`menu-button ${open ? 'open' : ''}`}
-            aria-expanded={open}
-            aria-label="Toggle menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className="bar" />
-            <span className="bar" />
-            <span className="bar" />
-          </button>
-        </div>
+        {/* Hamburger button */}
+        <button
+          className={`menu-button ${menuOpen ? 'open' : ''}`}
+          aria-expanded={menuOpen}
+          aria-label="Toggle menu"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span className="bar" />
+          <span className="bar" />
+          <span className="bar" />
+        </button>
 
-        <nav className={`nav-menu ${open ? 'visible' : ''}`} aria-hidden={!open}>
+        {/* Navigation */}
+        <nav className={`nav-menu ${menuOpen ? 'visible' : ''}`} aria-hidden={!menuOpen}>
           <button onClick={() => navigate('home')} className="nav-link">Home</button>
           <button onClick={() => navigate('culture')} className="nav-link">Culture</button>
           <button onClick={() => navigate('traditions')} className="nav-link">Traditions</button>
@@ -43,8 +46,8 @@ function Header({ onNavigate, currentPage }) {
           <button onClick={() => navigate('things')} className="nav-link">Things to do</button>
           <button onClick={() => navigate('about')} className="nav-link">About the Author</button>
         </nav>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }
 

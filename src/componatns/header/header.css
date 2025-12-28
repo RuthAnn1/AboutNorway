@@ -1,57 +1,47 @@
-#container {
-  display: grid;
-  grid-template-areas: "header";
-  background: rgb(15, 88, 123);
-  padding: 2rem 0;
-}
-
+/* Header container */
 header {
-  grid-area: header;
+  background: rgb(15, 88, 123);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center all children horizontally */
   text-align: center;
-  color: rgb(246, 210, 214);
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 1rem;
 }
 
-header h1 {
+/* Title and tagline */
+.header-title h1 {
   color: rgb(246, 210, 214);
-  margin: 0 0 0.25rem 0;
+  margin: 0;
   font-size: 1.9rem;
   letter-spacing: 0.5px;
 }
 
 .tagline {
   margin: 0;
-  color: rgb(246, 210, 214);
   font-size: 0.95rem;
+  color: rgb(246, 210, 214);
 }
 
-/* Menu button and nav */
-.header-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
+/* Hamburger button centered */
 .menu-button {
   width: 44px;
   height: 36px;
   background: transparent;
   border: none;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 6px;
   cursor: pointer;
+  align-self: center; /* THIS centers the button */
 }
 
 .menu-button .bar {
-  display: block;
   height: 3px;
   background: rgb(246, 210, 214);
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .menu-button.open .bar:nth-child(1) {
@@ -66,20 +56,23 @@ header h1 {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+/* Navigation menu */
 .nav-menu {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 12px;
-  justify-content: center;
-  margin-top: 20px;
+  padding: 1rem 0;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 200ms ease, max-height 240ms ease;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 .nav-menu.visible {
   opacity: 1;
-  max-height: 240px;
+  max-height: 500px;
 }
 
 .nav-link {
@@ -88,21 +81,26 @@ header h1 {
   color: rgb(246, 210, 214);
   padding: 8px 12px;
   border-radius: 6px;
+  width: 90%;
+  max-width: 200px;
+  text-align: center;
   cursor: pointer;
 }
 
+/* Desktop styles */
 @media (min-width: 720px) {
-  .nav-menu {
-    opacity: 1;
-    max-height: none;
-    margin-top: 20px;
-  }
   .menu-button {
     display: none;
   }
-  .header-row {
-    flex-direction: column;
-    gap: 24px;
+  .nav-menu {
+    flex-direction: row;
+    justify-content: center;
+    max-height: none;
+    opacity: 1;
+    width: auto;
   }
-}
-/*# sourceMappingURL=header.css.map */
+  .nav-link {
+    width: auto;
+    padding: 8px 16px;
+  }
+}/*# sourceMappingURL=header.css.map */
