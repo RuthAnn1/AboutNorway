@@ -1,18 +1,125 @@
 .norwegian-words {
+  max-width: 700px;
+  margin: 0 auto;
   padding: 2rem;
+  text-align: center;
+  color: #333;
+  /* Flashcard Deck */
+  /* List view */
 }
-
 .norwegian-words h2 {
   margin-bottom: 0.5rem;
 }
-
-.flashcard-controls {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
+.norwegian-words .view-toggle {
+  margin: 1rem 0;
 }
-
-.flashcard-stats {
-  margin-top: 10px;
-  color: #444;
+.norwegian-words .view-toggle button {
+  margin: 0 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+}
+.norwegian-words .view-toggle button.active {
+  background: #0087a6;
+  color: white;
+}
+.norwegian-words .view-toggle button:hover {
+  opacity: 0.9;
+}
+.norwegian-words .deck-progress {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+.norwegian-words .deck-container {
+  perspective: 1000px;
+  margin: 2rem 0;
+}
+.norwegian-words .flashcard-deck {
+  width: 250px;
+  height: 150px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.norwegian-words .card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.norwegian-words .card-inner.flipped {
+  transform: rotateY(180deg);
+}
+.norwegian-words .card-front,
+.norwegian-words .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.norwegian-words .card-front {
+  background: #f5f9ff;
+}
+.norwegian-words .card-back {
+  background: #0087a6;
+  color: white;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+.norwegian-words .pronunciation {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  opacity: 0.8;
+}
+.norwegian-words .deck-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+.norwegian-words .deck-controls button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #0087a6;
+  color: white;
+  cursor: pointer;
+}
+.norwegian-words .deck-controls button:hover {
+  opacity: 0.9;
+}
+.norwegian-words .deck-controls button.marked {
+  background: #2d7a2d;
+}
+.norwegian-words .list-view table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.norwegian-words .list-view table th, .norwegian-words .list-view table td {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.norwegian-words .list-view table tr.known {
+  background: #d4edda;
+}
+.norwegian-words .list-view table button {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background: #eee;
+}
+.norwegian-words .list-view table button:hover {
+  background: #ddd;
 }/*# sourceMappingURL=norwegianwords.css.map */

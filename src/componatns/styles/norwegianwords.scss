@@ -1,4 +1,149 @@
-.norwegian-words { padding: 2rem; }
-.norwegian-words h2 { margin-bottom: 0.5rem; }
-.flashcard-controls { display: flex; gap: 8px; margin-top: 12px; }
-.flashcard-stats { margin-top: 10px; color: #444; }
+@use './variables' as *;
+
+.norwegian-words {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: #333;
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .view-toggle {
+    margin: 1rem 0;
+    button {
+      margin: 0 0.5rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: #ddd;
+
+      &.active {
+        background: #0087a6;
+        color: white;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .deck-progress {
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+
+  /* Flashcard Deck */
+  .deck-container {
+    perspective: 1000px;
+    margin: 2rem 0;
+  }
+
+  .flashcard-deck {
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  .card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .card-front {
+    background: #f5f9ff;
+  }
+
+  .card-back {
+    background: #0087a6;
+    color: white;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+
+  .pronunciation {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    opacity: 0.8;
+  }
+
+  .deck-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #0087a6;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &.marked {
+        background: #2d7a2d;
+      }
+    }
+  }
+
+  /* List view */
+  .list-view table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th, td {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    tr.known {
+      background: #d4edda;
+    }
+
+    button {
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      background: #eee;
+
+      &:hover {
+        background: #ddd;
+      }
+    }
+  }
+}
