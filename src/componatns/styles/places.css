@@ -9,7 +9,7 @@
 /* Hero */
 .places-hero {
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 1rem;
   background: linear-gradient(180deg, rgb(230, 237, 243), rgb(247, 248, 249));
   color: rgb(121, 117, 175);
 }

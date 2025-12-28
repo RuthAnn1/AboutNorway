@@ -1,4 +1,8 @@
+/* Container */
 .home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer stays at bottom */
   width: 100%;
   background: rgb(155, 157, 198);
 }
@@ -35,6 +39,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -47,6 +52,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .welcome-guide h2 {
@@ -77,6 +83,7 @@
   border-left: 4px solid #0087a6;
   border-radius: 6px;
   transition: all 200ms ease;
+  width: 100%;
 }
 
 .guide-item:hover {
@@ -114,6 +121,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .highlights h2 {
@@ -136,6 +144,7 @@
   border-radius: 10px;
   transition: all 250ms ease;
   border: 2px solid transparent;
+  width: 100%;
 }
 
 .highlight-card:hover {
@@ -170,6 +179,7 @@
   color: rgb(246, 210, 214);
   text-align: center;
   padding: 3rem 2rem;
+  margin-top: auto; /* pushes footer down */
 }
 
 .cta-section h2 {
@@ -183,55 +193,7 @@
   opacity: 0.95;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .home-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .welcome-guide,
-  .highlights {
-    padding: 1.5rem;
-  }
-  .highlights-grid {
-    grid-template-columns: 1fr;
-  }
-  .cta-section {
-    padding: 2rem 1rem;
-  }
-  .cta-section h2 {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .hero {
-    padding: 2rem 1rem;
-  }
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-  .welcome-guide h2,
-  .highlights h2 {
-    font-size: 1.3rem;
-  }
-  .guide-item {
-    gap: 0.75rem;
-    padding: 0.75rem;
-  }
-  .guide-icon {
-    font-size: 1.25rem;
-  }
-}
+/* Translation Tooltip */
 .trans-word {
   position: relative;
   padding: 8px 12px;
@@ -265,15 +227,7 @@
   transform: translateX(-50%) translateY(-4px);
 }
 
-@media (max-width: 480px) {
-  .quick-words {
-    padding: 1rem;
-  }
-  .trans-word {
-    padding: 6px 10px;
-  }
-}
-/* CTA-specific translation style: transparent inline label (no light pill background) */
+/* CTA-specific translation style */
 .cta-trans {
   background: transparent;
   border: none;
@@ -283,7 +237,6 @@
 }
 
 .cta-trans::after {
-  /* keep tooltip appearance same as trans-word */
   content: attr(data-trans);
   position: absolute;
   left: 50%;
@@ -304,4 +257,62 @@
 .cta-trans:hover::after {
   opacity: 1;
   transform: translateX(-50%) translateY(-4px);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .welcome-guide,
+  .highlights {
+    padding: 1.5rem;
+  }
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-section {
+    padding: 2rem 1rem;
+  }
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  .welcome-guide h2,
+  .highlights h2 {
+    font-size: 1.3rem;
+  }
+  .guide-item {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  .guide-icon {
+    font-size: 1.25rem;
+  }
+  .quick-words {
+    padding: 1rem;
+  }
+  .trans-word {
+    padding: 6px 10px;
+  }
 }/*# sourceMappingURL=home.css.map */

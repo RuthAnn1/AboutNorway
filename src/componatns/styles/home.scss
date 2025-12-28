@@ -1,6 +1,10 @@
 @import '../styles/variables.scss';
 
+/* Container */
 .home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer stays at bottom */
   width: 100%;
   background: $purple-light;
 }
@@ -37,6 +41,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -49,6 +54,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .welcome-guide h2 {
@@ -79,6 +85,7 @@
   border-left: 4px solid #0087a6;
   border-radius: 6px;
   transition: all 200ms ease;
+  width: 100%;
 }
 
 .guide-item:hover {
@@ -116,6 +123,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .highlights h2 {
@@ -138,6 +146,7 @@
   border-radius: 10px;
   transition: all 250ms ease;
   border: 2px solid transparent;
+  width: 100%;
 }
 
 .highlight-card:hover {
@@ -172,6 +181,7 @@
   color: $pink-light;
   text-align: center;
   padding: 3rem 2rem;
+  margin-top: auto; /* pushes footer down */
 }
 
 .cta-section h2 {
@@ -185,12 +195,78 @@
   opacity: 0.95;
 }
 
+/* Translation Tooltip */
+.trans-word {
+  position: relative;
+  padding: 8px 12px;
+  background: #f5fafe;
+  border-radius: 8px;
+  border: 1px solid #e6f0fb;
+  cursor: help;
+  font-weight: 600;
+}
+.trans-word::after {
+  content: attr(data-trans);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 8px);
+  background: rgba(12,35,60,0.95);
+  color: white;
+  padding: 6px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  transform-origin: center bottom;
+}
+.trans-word:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* CTA-specific translation style */
+.cta-trans {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: $pink-light;
+  font-weight: 600;
+}
+
+.cta-trans::after {
+  content: attr(data-trans);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 8px);
+  background: rgba(12,35,60,0.95);
+  color: white;
+  padding: 6px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  transform-origin: center bottom;
+}
+
+.cta-trans:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
 /* Responsive */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .home-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
     padding: 0 1rem;
+    gap: 1.5rem;
   }
 
   .hero h1 {
@@ -219,7 +295,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .hero {
     padding: 2rem 1rem;
   }
@@ -245,67 +321,12 @@
   .guide-icon {
     font-size: 1.25rem;
   }
-}
 
-.trans-word {
-  position: relative;
-  padding: 8px 12px;
-  background: #f5fafe;
-  border-radius: 8px;
-  border: 1px solid #e6f0fb;
-  cursor: help;
-  font-weight: 600;
-}
-.trans-word::after {
-  content: attr(data-trans);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: calc(100% + 8px);
-  background: rgba(12,35,60,0.95);
-  color: white;
-  padding: 6px 8px;
-  border-radius: 6px;
-  white-space: nowrap;
-  font-size: 0.9rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 160ms ease, transform 160ms ease;
-  transform-origin: center bottom;
-}
-.trans-word:hover::after { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+  .quick-words {
+    padding: 1rem;
+  }
 
-@media (max-width: 480px) {
-  .quick-words { padding: 1rem; }
-  .trans-word { padding: 6px 10px; }
+  .trans-word {
+    padding: 6px 10px;
+  }
 }
-
-/* CTA-specific translation style: transparent inline label (no light pill background) */
-.cta-trans {
-  background: transparent;
-  border: none;
-  padding: 0;
-  color: $pink-light;
-  font-weight: 600;
-}
-
-.cta-trans::after {
-  /* keep tooltip appearance same as trans-word */
-  content: attr(data-trans);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: calc(100% + 8px);
-  background: rgba(12,35,60,0.95);
-  color: white;
-  padding: 6px 8px;
-  border-radius: 6px;
-  white-space: nowrap;
-  font-size: 0.9rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 160ms ease, transform 160ms ease;
-  transform-origin: center bottom;
-}
-
-.cta-trans:hover::after { opacity: 1; transform: translateX(-50%) translateY(-4px); }
