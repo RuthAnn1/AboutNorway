@@ -1,4 +1,4 @@
-@import './variables';
+@use './variables' as *;
 
 .traditions {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
