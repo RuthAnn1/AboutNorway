@@ -1,32 +1,23 @@
 import React from 'react';
-import ImageArea from './ImageArea';
 import '../styles/things.css';
+import profileImg from '../photos/mypic.jpg';
+function ImageArea({ title, imgSrc, description }) {
+  return (
+    <div className="image-area">
+      <img src={imgSrc} alt={title} />
+      <div className="image-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+}
 
 const thingsToDo = [
-  {
-    name: "Fjord Cruises",
-    img: "/images/fjord-cruise.jpg",
-    description:
-      "Experience Norway's stunning fjords up close with guided boat tours that showcase breathtaking landscapes."
-  },
-  {
-    name: "Northern Lights Tours",
-    img: "/images/northern-lights.jpg",
-    description:
-      "Join a tour to witness the magical Aurora Borealis in the Arctic regions of Norway." 
-  },
-  {
-    name: "Hiking Adventures",  
-    img: "/images/hiking.jpg",
-    description:
-      "Explore Norway's diverse trails, from easy walks to challenging hikes in the mountains and national parks."  
-  },
-  {
-    name: "Sami Cultural Experiences",
-    img: "/images/sami-culture.jpg",
-    description:
-      "Learn about the indigenous Sami people through cultural tours, traditional food, and handicrafts."
-  }
+  { name: "Fjord Cruises", img: "/images/fjord-cruise.jpg", description: "Experience Norway's stunning fjords up close..." },
+  { name: "Northern Lights Tours", img: "/images/northern-lights.jpg", description: "Join a tour to witness the magical Aurora..." },
+  { name: "Hiking Adventures", img: "/images/hiking.jpg", description: "Explore Norway's diverse trails..." },
+  { name: "Sami Cultural Experiences", img: "/images/sami-culture.jpg", description: "Learn about the indigenous Sami people..." }
 ];
 
 export default function ThingsToDo() {
