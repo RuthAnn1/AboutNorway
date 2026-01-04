@@ -4,7 +4,6 @@
   flex-direction: column;
   min-height: 100vh; /* ensures footer stays at bottom */
   width: 100%;
-  background: rgb(155, 157, 198);
 }
 
 /* Hero Section */

@@ -10,16 +10,12 @@ import Footer from "../footer/footer.jsx";
 export default function Culture() {
   return (
     <main className="culture">
-
-      {/* Hero */}
       <section className="culture-hero">
         <h1>Culture in Norway</h1>
         <p>
           A quiet, balanced way of life shaped by nature, trust, and respect
         </p>
       </section>
-
-      {/* Grid */}
       <section className="culture-grid">
 
         <div className="culture-card">
