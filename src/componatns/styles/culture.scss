@@ -65,6 +65,17 @@
   height: 180px;
   border-radius: 12px;
   background: linear-gradient(135deg, #dfe6ec, #eef2f5);
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Specific positioning for bottom cards */
+.culture-card:nth-child(4) .image-placeholder {
+  object-position: center top;
+}
+
+.culture-card:nth-child(5) .image-placeholder {
+  object-position: center 50%;
 }
 
 /* Top row cards */
